@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="dashboard.svg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Cadastro</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        main {
+            flex: 1;
+            display: flex;
+            justify-content: center; /* Centraliza horizontalmente */
+            align-items: center; /* Centraliza verticalmente */
+            background-image: url("background.jpg");
+            background-color: #cccccc;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+        footer {
+            height: 6vh;
+            width: 100%;
+            background-color: #000;
+            color: white;
+        }
+        .cadastro {
+            background-color: rgba(255, 255, 255, 1); /* Fundo semi-transparente */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+
+        main > form > input, select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: border 0.3s ease;
+}
+
+input:focus, select:focus {
+    border-color: #fccf34; /* Amarelo para combinar com o layout */
+}
+
+.enviar {
+    background-color: #fccf34;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+}
+
+  .radio-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .genero-container {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente se necessário */
+}
+
+.genero-option {
+    margin-right: 20px; /* Espaçamento entre os radio buttons */
+    text-align: center; /* Centraliza os labels abaixo dos radio buttons */
+}
+.genero-option:last-child {
+    margin-right: 0;
+}
+
+.enviar {
+    display: block; /* Para que as margens funcionem corretamente */
+    margin: 20px auto; /* Espaçamento acima e centraliza horizontalmente */
+}
+    </style>
+  </head>
+  <body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"><img src="dashboard.svg" height="40vh" width="40vw"></a>
+                <button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Início</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button">
+                                Tecnologias
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Wireframe</a></li>
+                                <li><a class="dropdown-item" href="#">UX</a></li>
+                                <li><a class="dropdown-item" href="#">Bootstrap</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Sobre nós</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Procurar" aria-label="Search">
+                        <button class="btn py-1" style="background-color: transparent; border-color: #fccf34; color: #fccf34; padding-top: 2%;" type="submit">Procurar</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="container-fluid pt-4 pb-4">
+        <form action="#" method="post" class="cadastro">
+            <h1>Cadastro de Usuário</h1>
+            <hr>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+            <br>
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
+            <br>
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" name="senha" required>
+            <br>
+            <label for="confirmar-senha">Confirmar Senha:</label>
+            <input type="password" id="confirmar-senha" name="confirmar-senha" required>
+            <br>
+            <label>Gênero:</label>
+            <div class="genero-container">
+                <div class="genero-option">
+                    <input type="radio" id="genero-masculino" name="genero" value="Masculino">
+                    <label for="genero-masculino">Masculino</label>
+                </div>
+                <div class="genero-option">
+                    <input type="radio" id="genero-feminino" name="genero" value="Feminino">
+                    <label for="genero-feminino">Feminino</label>
+                </div>
+                <div class="genero-option">
+                    <input type="radio" id="genero-outro" name="genero" value="Outro">
+                    <label for="genero-outro">Outro</label>
+                </div>
+            </div>
+            <br>
+            <label for="data-nascimento">Data de Nascimento:</label>
+            <input type="date" id="data-nascimento" name="data-nascimento" required>
+            <br>
+            <label for="cidade">Cidade:</label>
+            <input type="text" id="cidade" name="cidade">
+            <br>
+            <label for="pais">País:</label>
+            <input type="text" id="pais" name="pais">
+            <br>
+            <button type="submit" class="enviar">Cadastrar</button>
+        </form>
+    </main>
+    <footer class="bg-dark text-center text-white text-center p-3">
+        <span>    
+            © 2024 Copyright:
+        </span>
+        <a class="text-white text-decoration-none">
+            206322023@eniac.edu.br
+        </a>
+    </footer>
+
+    <script>
+        // Função para ativar e desativar o dropdown
+        document.getElementById("navbarDropdown").addEventListener("click", function() {
+            var dropdownMenu = this.nextElementSibling;
+            if (dropdownMenu.style.display === "block") {
+                dropdownMenu.style.display = "none";
+            } else {
+                dropdownMenu.style.display = "block";
+            }
+        });
+
+        // Fechar o dropdown ao clicar fora dele
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropdown-toggle')) {
+                var dropdowns = document.getElementsByClassName("dropdown-menu");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.style.display === "block") {
+                        openDropdown.style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
+  </body>
+</html>
